@@ -7,12 +7,30 @@ authors = ["NHTanvir <naymulhasantanvir10@gmail.com>"]
 license = "MIT"
 repository = "https://github.com/NHTanvir/lancer-halmos"
 
+[[bin]]
+name = "lancer-halmos"
+path = "src/main.rs"
+
 [dependencies]
 clap = { version = "4", features = ["derive"] }
 tokio = { version = "1", features = ["full"] }
 anyhow = "1"
+thiserror = "1"
 tracing = "0.1"
-tracing-subscriber = "0.3"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+rayon = "1"
+sha3 = "0.10"
+hex = "0.4"
+primitive-types = { version = "0.12", features = ["serde"] }
+indexmap = { version = "2", features = ["serde"] }
+regex = "1"
+walkdir = "2"
+tempfile = "3"
+num-bigint = "0.4"
+num-traits = "0.2"
 
 [profile.release]
 opt-level = 3
